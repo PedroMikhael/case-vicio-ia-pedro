@@ -1,0 +1,26 @@
+{
+  "hardware": {
+    "so": "Windows-11-10.0.26200-SP0",
+    "processador": "Intel64 Family 6 Model 190 Stepping 0, GenuineIntel",
+    "cpus_logicas": 8,
+    "threads_blas": 1,
+    "versao_python": "3.13.2",
+    "versao_numpy": "2.4.6"
+  },
+  "total_questoes_amostra": 659,
+  "n_repeticoes": 10,
+  "etapa2_decisao": {
+    "tempo_medio_passada_ms": 258.42,
+    "desvio_padrao_ms": 37.54,
+    "throughput_questoes_por_segundo": 2550.1,
+    "latencia_por_questao_ms": 0.392,
+    "projecao_tempo_50k_segundos": 19.6,
+    "projecao_tempo_50k_minutos": 0.33
+  },
+  "etapa1_estimativas_documentadas": {
+    "gpu_t4_fp16_batch_q_por_s": 1100,
+    "gpu_t4_tempo_50k_segundos": 45.0,
+    "cpu_pura_q_por_s": 35,
+    "cpu_pura_tempo_50k_minutos": 24.0
+  }
+}

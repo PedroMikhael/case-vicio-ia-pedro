@@ -1,0 +1,106 @@
+{
+  "n_splits": 5,
+  "n_repeats": 5,
+  "tau_fora": 0.4,
+  "tau_pub": 0.92,
+  "n_efetivo_publicadas": 19,
+  "n_efetivo_acertos": 19,
+  "precisao_pontual": 1.0,
+  "precisao_wilson_inf": 0.831821344750628,
+  "precisao_wilson_sup": 1.0,
+  "precisao_bootstrap_inf": 1.0,
+  "precisao_bootstrap_sup": 1.0,
+  "cobertura_pontual": 0.19,
+  "cobertura_wilson_inf": 0.12514762298533438,
+  "cobertura_wilson_sup": 0.2777882560968556,
+  "cobertura_unlabeled_n": 87,
+  "cobertura_unlabeled_total": 559,
+  "cobertura_unlabeled_pct": 0.1556350626118068,
+  "brier_score": 0.18565799295902252,
+  "ece": 0.05659997314214706,
+  "tabela_confiabilidade": [
+    {
+      "faixa": "[0.00, 0.30]",
+      "n": 30,
+      "conf_media": 0.19199998676776886,
+      "acc_real": 0.30000001192092896,
+      "gap": 0.1080000251531601
+    },
+    {
+      "faixa": "[0.30, 0.50]",
+      "n": 15,
+      "conf_media": 0.4179999530315399,
+      "acc_real": 0.4000000059604645,
+      "gap": 0.01799994707107544
+    },
+    {
+      "faixa": "[0.50, 0.70]",
+      "n": 15,
+      "conf_media": 0.5926666855812073,
+      "acc_real": 0.6000000238418579,
+      "gap": 0.007333338260650635
+    },
+    {
+      "faixa": "[0.70, 0.85]",
+      "n": 13,
+      "conf_media": 0.7776922583580017,
+      "acc_real": 0.7692307829856873,
+      "gap": 0.008461475372314453
+    },
+    {
+      "faixa": "[0.85, 0.92]",
+      "n": 4,
+      "conf_media": 0.8899999856948853,
+      "acc_real": 0.5,
+      "gap": 0.38999998569488525
+    },
+    {
+      "faixa": "[0.92, 1.00]",
+      "n": 23,
+      "conf_media": 0.9726086258888245,
+      "acc_real": 0.95652174949646,
+      "gap": 0.016086876392364502
+    }
+  ],
+  "destinos_fora_8": {
+    "publicar": 0,
+    "revisar": 8,
+    "fora": 0
+  },
+  "cobertura_perdida_n": 39,
+  "erros_detalhes": [],
+  "tabela_ablativa": [
+    {
+      "nome": "Baseline 0 (Dense puro / Sem Árvore / Sem OOD)",
+      "precisao": 32.0,
+      "cobertura": 100.0,
+      "fora_pct": 0.0,
+      "publicadas": 500,
+      "acertos": 160
+    },
+    {
+      "nome": "Iteração 1 (Dense + Teoria da Decisão na Árvore)",
+      "precisao": 100.0,
+      "cobertura": 5.0,
+      "fora_pct": 0.0,
+      "publicadas": 25,
+      "acertos": 25
+    },
+    {
+      "nome": "Iteração 2 (Híbrido Denso+Esparso+Simbólico + Árvore)",
+      "precisao": 95.65217391304348,
+      "cobertura": 23.0,
+      "fora_pct": 0.0,
+      "publicadas": 115,
+      "acertos": 110
+    },
+    {
+      "nome": "Iteração 3 (Sistema Completo: Híbrido + Árvore + P(fora))",
+      "precisao": 100.0,
+      "cobertura": 19.0,
+      "fora_pct": 0.0,
+      "publicadas": 95,
+      "acertos": 95
+    }
+  ]
+}

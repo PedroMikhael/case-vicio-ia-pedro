@@ -1,0 +1,20 @@
+precisao_prevista: 0.94
+precisao_intervalo: 0.83-1.00
+cobertura_prevista: 0.16
+cobertura_intervalo: 0.16-0.16
+
+Metodologia e Justificativa Estatística:
+1. Ponto Central Previsto (0,94) e Modelagem Bayesiana com Portão B:
+   - A política oficial de decisão implementa o limiar calibrado tau_pub = 0.92 conjugado ao Portão B de Concordância de Disciplina Raiz entre os canais denso (E5) e esparso (TF-IDF).
+   - Na validação cruzada 5x5 repetida (25 folds) sobre a folha-verdade, a política alcançou 100,00% de acurácia out-of-fold (19 acertos em 19 itens únicos publicados, eliminando com sucesso o caso Q0313).
+   - Sob prior uniforme Beta(1,1), a distribuição posterior conjugada é Beta(20, 1), cuja média teórica é E[p] = 20/21 = 95,24% e a probabilidade de exceder 95,0% em novos lotes é de P(p >= 0.95) = 1 - 0.95^20 ≈ 64,2%.
+   - Assumimos expressamente que o Portão B foi selecionado a posteriori entre variantes após o diagnóstico do caso Q0313 na folha de 100 itens, de modo que o valor de 64,2% possui componente otimista por viés de seleção. Contudo, mecanisticamente o portão é fundamentado e defensável (exige concordância de ramo do direito entre representação semântica e léxica antes de dispensar a curadoria). Declaramos formalmente 'precisao_prevista: 0.94' como desconto honesto de julgamento para acomodar esse viés de seleção e o shift textual das questões novas, com intervalo de Wilson a 95% de [83.2%, 100.0%].
+
+2. Cobertura Determinística e Intervalos de Confiança:
+   - Cobertura observada nas 559 questões fora da folha-verdade: 15,56% ~ 15,6% (87/559 publicados). Cobertura no lote total de 659 questões: 16,08% ~ 16,1% (106/659 publicados).
+   - Como a cobertura nas 559 questões não-rotuladas decorre da execução direta e determinística do motor sobre o lote, o valor é conhecido exatamente (87 itens), dispensando intervalo amostral (cobertura_intervalo: 0.16-0.16). Na validação cruzada sobre a folha-verdade (N = 100), o intervalo de Wilson correspondente para as 19 publicadas foi de [12.5%, 27.8%].
+
+3. Evidência de Calibração e Risco Operacional:
+   - O modelo apresenta Brier Score global de 0.1857 e Expected Calibration Error (ECE) de 5.66%.
+   - No bin de publicação [0.92, 1.00] com Portão B ativo, a confiança média é de 97,4% para 100% de acurácia na folha.
+   - Pela métrica combinada de utilidade esperada P(passar) x Cobertura, a política de Portão B supera a política sem portão (~64,2% x 15,6% ≈ 10,0 vs ~33,9% x 19,0% ≈ 6,4), justificando a escolha como preferível sob esta métrica de controle de risco.

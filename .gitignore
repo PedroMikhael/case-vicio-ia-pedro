@@ -1,0 +1,42 @@
+# ==============================================================================
+# .gitignore Oficial - Case Vício IA
+# Configurado para versionar estritamente as pastas:
+#   1. entrega_nova/  (Solução final oficial auditada)
+#   2. case-vicio-ia/ (Enunciado original e anexos da banca)
+# ==============================================================================
+
+# 1. Ignorar por padrão todas as pastas e arquivos na raiz
+/*
+
+# 2. Exceções: Permitir apenas as pastas oficiais da entrega e o próprio .gitignore
+!/entrega_nova/
+!/case-vicio-ia/
+!.gitignore
+!README.md
+
+# 3. Regras de limpeza interna para as pastas permitidas
+# Byte-compiled / otimizados Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+.venv/
+venv/
+ENV/
+env/
+
+# Configurações de IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs e arquivos temporários de execução
+*.log
+*.tmp
